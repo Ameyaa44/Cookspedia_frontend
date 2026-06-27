@@ -1,0 +1,189 @@
+.profile-page{
+    background-color: #FFF8F2;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.profile-hero{
+    background-color: #de4710c6;
+    padding: 40px 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-image-wrapper{
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    padding: 8px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.profile-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+
+.profile-name{
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.profile-text{
+    color: rgba(255,255,255,0.9);
+    line-height: 1.9;
+    font-size: 1.05rem;
+    max-width: 700px;
+}
+
+.edit-btn{
+    background-color: white;
+    color: #FF6B35;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 22px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.edit-btn:hover{
+    background-color: #fff1ea;
+    color: #e85a24;
+    transform: translateY(-3px);
+}
+
+.download-title{
+    color: #2E8B57;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.recipe-card{
+    background-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.recipe-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.recipe-img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.recipe-body{
+    padding: 18px;
+}
+
+.recipe-name{
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.custom-offcanvas{
+    background-color: #FFF8F2;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    width: 360px !important;
+}
+
+.offcanvas-header{
+    background: linear-gradient(135deg,#FF6B35,#ff9f1c);
+    color: white;
+    padding: 20px;
+}
+
+.offcanvas-body{
+    padding: 30px 20px;
+}
+
+.upload-label{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-label:hover{
+    transform: scale(1.03);
+}
+
+.upload-img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #FF6B35;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.custom-input{
+    border-radius: 14px;
+    border: 2px solid #FFE3D6;
+    padding: 14px 18px;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+.custom-input:focus{
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 0.15rem rgba(255,107,53,0.15);
+}
+
+.update-btn{
+    background-color: #FF6B35;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 22px;
+    font-weight: 600;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.update-btn:hover{
+    background-color: #e85a24;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .profile-hero{
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .profile-name{
+        font-size: 2.2rem;
+    }
+
+    .profile-image-wrapper{
+        width: 200px;
+        height: 200px;
+    }
+
+    .download-title{
+        font-size: 2rem;
+    }
+
+    .custom-offcanvas{
+        width: 100% !important;
+        border-radius: 0;
+    }
+}

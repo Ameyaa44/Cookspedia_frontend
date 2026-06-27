@@ -1,0 +1,126 @@
+.saved-page{
+    min-height: 100vh;
+    background-color: #FFF8F2;
+    overflow-x: hidden;
+}
+
+.saved-title{
+    color: #2E8B57;
+    font-size: 3rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.saved-title::after{
+    content: "";
+    width: 120px;
+    height: 4px;
+    background-color: #FF6B35;
+    display: block;
+    margin: 14px auto 0;
+    border-radius: 30px;
+}
+
+.saved-card{
+    background-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.4s;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.saved-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.image-wrapper{
+    overflow: hidden;
+}
+
+.recipe-img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.saved-card:hover .recipe-img{
+    transform: scale(1.08);
+}
+
+.card-body-custom{
+    padding: 20px;
+}
+
+.recipe-name{
+    color: #222;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.delete-btn{
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFF1EA;
+    color: #FF6B35;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.delete-btn:hover{
+    background-color: #FF6B35;
+    color: white;
+    transform: rotate(10deg) scale(1.08);
+}
+
+.empty-state{
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.empty-icon{
+    font-size: 6rem;
+    color: #FF6B35;
+    opacity: 0.8;
+}
+
+.empty-title{
+    color: #2E8B57;
+    font-weight: 700;
+}
+
+.empty-text{
+    color: #6B7280;
+    font-size: 1.05rem;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .saved-title{
+        font-size: 2.2rem;
+    }
+
+    .recipe-img{
+        height: 230px;
+    }
+
+    .empty-icon{
+        font-size: 4.5rem;
+    }
+
+    .empty-title{
+        font-size: 1.8rem;
+    }
+}

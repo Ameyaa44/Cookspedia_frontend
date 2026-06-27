@@ -1,0 +1,73 @@
+<div class="admin-dashboard">
+    <div class="row g-0">
+        <div class="col-12 col-md-3 sidebar-section">
+            <app-admin-sidebar />
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="container-fluid py-4">
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="stats-card users-card shadow-lg">
+                            <div>
+                                <h5>Total Users</h5>
+                                <h2>{{userCount}}</h2>
+                            </div>
+                            <i class="fa-solid fa-users stats-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="stats-card recipes-card shadow-lg">
+                            <div>
+                                <h5>Total Recipes</h5>
+                                <h2>{{recipeCount}}</h2>
+                            </div>
+                            <i class="fa-solid fa-bowl-food stats-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="stats-card feedback-card shadow-lg">
+                            <div>
+                                <h5>Total Feedbacks</h5>
+                                <h2>{{feedbackCount}}</h2>
+                            </div>
+                            <i class="fa-solid fa-comments stats-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5 g-4 align-items-start">
+                    <!-- Chart -->
+                    <div class="col-12 col-lg-7">
+                        <div class="chart-card shadow-lg">
+                            <h4 class="mb-4 fw-bold">
+                                Website Analytics
+                            </h4>
+
+                            <highcharts-chart
+                                [constructorType]="chartConstructor"
+                                [options]="chartOptions"
+                                class="chart">
+                            </highcharts-chart>
+
+                        </div>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="col-12 col-lg-5">
+                        <div class="calendar-card shadow-lg">
+                            <h4 class="mb-4 fw-bold">
+                                Calendar
+                            </h4>
+
+                            <mat-card class="demo-inline-calendar-card">
+                                <mat-calendar [(selected)]="selected"></mat-calendar>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

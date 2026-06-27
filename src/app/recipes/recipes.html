@@ -1,0 +1,202 @@
+<app-header />
+
+<!-- Recipes Page -->
+
+<div class="recipes-page">
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <!-- Sidebar Filters -->
+
+      <div class="col-12 col-md-3 sidebar-section">
+
+        <div class="sidebar-content">
+
+          <h3 class="filter-title">
+            Filters
+          </h3>
+
+          <!-- All -->
+
+          <button
+            class="btn all-btn w-100"
+            (click)="setFilterKeyword('')">
+
+            All Recipes
+
+          </button>
+
+          <!-- Cuisine Types -->
+
+          <div class="mt-4">
+
+            <button
+              class="btn filter-collapse-btn w-100"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#cuisineCollapse">
+
+              Cuisine Types
+              <i class="fa-solid fa-angle-down"></i>
+
+            </button>
+
+            <div class="collapse mt-3" id="cuisineCollapse">
+
+              <div class="filter-box">
+
+                @for (i of cuisineList; track $index) {
+
+                <button
+                  class="btn filter-tag"
+                  (click)="setFilterKeyword(i)">
+
+                  {{ i }}
+
+                </button>
+
+                }
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Meal Types -->
+
+          <div class="mt-4">
+
+            <button
+              class="btn filter-collapse-btn w-100"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mealCollapse">
+
+              Meal Types
+              <i class="fa-solid fa-angle-down"></i>
+
+            </button>
+
+            <div class="collapse mt-3" id="mealCollapse">
+
+              <div class="filter-box">
+
+                @for (i of mealTypeList; track $index) {
+
+                <button
+                  class="btn filter-tag"
+                  (click)="setFilterKeyword(i)">
+
+                  {{ i }}
+
+                </button>
+
+                }
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Recipe Section -->
+
+      <div class="col-12 col-md-9 recipe-section">
+
+        <!-- Top Header -->
+
+        <div class="recipe-header">
+
+          <h1 class="recipe-title">
+            Recipes
+          </h1>
+
+          <input
+            type="search"
+            name="search"
+            [(ngModel)]="searchKey"
+            placeholder="Search Recipes..."
+            class="form-control search-box" />
+
+        </div>
+
+        <!-- Recipe Cards -->
+
+        <div class="row g-4 py-4">
+
+          @if (allRecipes.length > 0) {
+
+          @for (recipe of allRecipes | search:searchKey; track $index) {
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div
+              class="recipe-card shadow-lg"
+              (click)="gotoDetails(recipe._id)">
+
+              <!-- Image -->
+
+              <div class="recipe-image-wrapper">
+
+                <img
+                  [src]="recipe?.image"
+                  class="recipe-image"
+                  alt="recipe-img" />
+
+              </div>
+
+              <!-- Card Body -->
+
+              <div class="recipe-card-body">
+
+                <h4 class="recipe-name">
+                  {{ recipe?.name }}
+                </h4>
+
+                <p class="recipe-cuisine">
+                  Cuisine :
+                  <span>{{ recipe?.cuisine }}</span>
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          }
+
+          }
+
+          @else {
+
+          <div class="empty-section">
+
+            <i class="fa-solid fa-utensils empty-icon"></i>
+
+            <h2 class="text-danger fw-bold mt-4">
+              No Recipes Available!!
+            </h2>
+
+          </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer />

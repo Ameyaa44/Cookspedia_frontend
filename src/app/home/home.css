@@ -1,0 +1,267 @@
+.hero-section{
+    min-height: 90vh;
+    background:
+    linear-gradient(to right, rgba(255,255,255,0.96), rgba(255,248,240,0.92)),
+    url('https://www.transparenttextures.com/patterns/food.png');
+
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-badge{
+    background: #fff3e8;
+    color: #ff6b00;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.hero-title{
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #222;
+}
+
+.hero-text{
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 650px;
+}
+
+.hero-btn{
+    background: linear-gradient(45deg,#ff6b00,#ff8c00);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: 0.3s;
+    height: 45px;
+}
+
+.hero-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,107,0,0.3);
+}
+
+.hero-outline-btn{
+    border: 2px solid #ff6b00;
+    color: #ff6b00;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+    height: 45px;
+}
+
+.hero-outline-btn:hover{
+    background: #ff6b00;
+    color: white;
+}
+
+.hero-image-wrapper{
+    position: relative;
+    display: inline-block;
+}
+
+.heroimg{
+    max-height: 520px;
+    /* animation: float 4s ease-in-out infinite; */
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+}
+
+.floating-card{
+    position: absolute;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+.card-one{
+    top: 10%;
+    left: -10%;
+}
+
+.card-two{
+    bottom: 10%;
+    right: -10%;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes floatCard{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@media(max-width:768px){
+
+    .hero-title{
+        font-size: 2.6rem;
+    }
+
+    .heroimg{
+        max-height: 380px;
+    }
+
+    .floating-card{
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    .card-one{
+        left: 0;
+    }
+
+    .card-two{
+        right: 0;
+    }
+}
+
+.explore-btn,
+.download-btn{
+    background-color: #FF6B35;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover,
+.download-btn:hover{
+    background-color: #e85a24;
+    transform: translateY(-3px);
+}
+
+.section-title{
+    color: #2E8B57;
+}
+
+.recipe-card{
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    transition: 0.4s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.recipe-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.recipe-card img{
+    object-fit: cover;
+}
+
+.card-title{
+    color: #222222;
+}
+
+.cuisine-text{
+    color: #6B7280;
+}
+
+.banner-section{
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.banner-overlay{
+    background: rgba(34,34,34,0.65);
+    color: white;
+}
+
+.download-section{
+    background: linear-gradient(135deg,#FF6B35,#ff9f1c);
+    border-radius: 24px;
+    color: white;
+}
+
+.download-title{
+    color: white;
+}
+
+.download-text{
+    line-height: 1.8;
+}
+
+.testimonial-card{
+    background-color: white;
+    padding: 25px;
+    border-radius: 18px;
+    transition: 0.3s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.testimonial-card:hover{
+    transform: translateY(-5px);
+}
+
+.testimonial-text{
+    color: #6B7280;
+    line-height: 1.7;
+}
+
+.user-name{
+    color: #FF6B35;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .hero-section{
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero-title{
+        font-size: 2.5rem;
+    }
+
+    .heroimg{
+        max-height: 320px;
+    }
+
+    .banner-overlay h1{
+        font-size: 2rem;
+    }
+}

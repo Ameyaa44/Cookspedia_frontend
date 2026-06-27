@@ -1,0 +1,203 @@
+<app-header />
+
+<!-- Home page -->
+<div class="container-fluid home-page">
+
+  <!-- Hero Section -->
+<!-- Hero Section -->
+<div class="row hero-section align-items-center px-3 px-md-5 py-5">
+
+  <!-- Left Content -->
+  <div class="col-12 col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+
+    <span class="hero-badge">
+      🍴 Welcome To CooksPedia
+    </span>
+
+    <h1 class="hero-title mt-4">
+      Discover Delicious
+      <span class="text-gradient">Recipes</span>
+      For Every Mood
+    </h1>
+
+    <p class="hero-text mt-4">
+      Explore thousands of mouth-watering recipes from around the world.
+      Cook faster, eat healthier, and enjoy every bite with easy-to-follow
+      instructions and fresh inspiration every day.
+    </p>
+
+    <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center justify-content-lg-start">
+
+      <button
+        routerLink="/recipes"
+        class="btn hero-btn px-4 "
+      >
+        Explore Recipes
+      </button>
+
+      <button
+        routerLink="/about"
+        class="btn hero-outline-btn px-4"
+      >
+        Learn More
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Right Image -->
+  <div class="col-12 col-lg-6 text-center position-relative">
+
+    <div class="hero-image-wrapper">
+
+      <img
+        src="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png"
+        alt="heroimg"
+        class="img-fluid heroimg"
+      />
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- Popular section -->
+  <div class="container-fluid py-5">
+    <h2 class="text-center mb-5 fw-bold section-title">
+      Popular Recipes Of This Week
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      @if (popularRecipes.length > 0) {
+
+        @for(recipe of popularRecipes; track $index){
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+
+          <div class="card recipe-card border-0">
+            <img
+              [src]="recipe?.image"
+              class="card-img-top"
+              alt="recipe-img"
+              height="280px"
+            />
+
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">
+                {{recipe?.name}}
+              </h5>
+
+              <p class="mb-0 cuisine-text">
+                <b>Cuisine :</b> {{recipe?.cuisine}}
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        }
+
+      }
+
+      @else {
+        <h3 class="text-danger text-center">
+          No Recipes Available
+        </h3>
+      }
+
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner-section my-4">
+    <div class="banner-overlay text-center py-5 px-3">
+      <h1 class="fw-bold">
+        50+ Recipes That Are Quick & Easy
+      </h1>
+
+      <p class="mt-3">
+        Find the perfect food ideas to start your day in a faster and easier way.
+      </p>
+    </div>
+  </div>
+
+  <!-- Download app -->
+  <div class="download-section my-5 py-5 px-3">
+
+    <div class="row align-items-center">
+
+      <div class="col-12 col-md-6 text-center mb-4 mb-md-0">
+        <img
+          src="https://cdni.iconscout.com/illustration/premium/thumb/mobile-app-development-illustration-svg-download-png-11692216.png"
+          alt="downloadapp"
+          class="img-fluid download-img"
+        />
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="fw-bold download-title">
+          Download Application
+        </h2>
+
+        <p class="mt-3 download-text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, rem.
+          Incidunt aspernatur, dolorem at quos optio ipsum reprehenderit eius excepturi?
+          Magni nihil ipsam provident similique numquam voluptas architecto.
+        </p>
+
+        <button class="btn download-btn px-4 py-2 fw-semibold mt-2">
+          <i class="fa-solid fa-download me-2"></i>
+          Download Now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- User testimonials -->
+  <div class="container-fluid py-5">
+
+    <h1 class="text-center mb-5 fw-bold section-title">
+      User Testimonials
+    </h1>
+
+    <div class="row g-4 justify-content-center">
+
+      @if(feedbackList.length>0){
+
+        @for(fd of feedbackList; track $index){
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+          <div class="testimonial-card h-100">
+            <p class="testimonial-text">
+              {{fd?.feedback}}
+            </p>
+
+            <p class="text-end fw-bold mb-0 user-name">
+              - {{fd?.name}}
+            </p>
+          </div>
+
+        </div>
+
+        }
+
+      }
+
+      @else{
+        <h3 class="text-center text-danger">
+          No Feedbacks Added Yet
+        </h3>
+      }
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer />

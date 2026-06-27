@@ -1,0 +1,25 @@
+<div class="sidebar d-flex flex-column text-light gap-3" style="height: 100vh;">
+    <h3 class="display-5 mt-5">Cookspedia Admin</h3>
+    <div class="d-flex flex-column gap-3 ps-4">
+        <a routerLink="/admin" class="sidebar-link">
+            <i class="fa-solid fa-chart-bar"></i>
+                Dashboard
+        </a>
+        <a routerLink="/admin/recipes" class="sidebar-link">
+            <i class="fa-solid fa-fire"></i>
+                Recipes
+        </a>
+        <a routerLink="/admin/users" class="sidebar-link">
+            <i class="fa-solid fa-user"></i>
+                Users
+        </a>
+        <a routerLink="/admin/feedbacks" class="sidebar-link">
+            <i class="fa-solid fa-envelope"></i>
+                Feedbacks
+        </a>
+        <span class="logout-btn" style="cursor: pointer;font-size: 20px;" (click)="handleLogout()">
+            <i class="fa-solid fa-power-off"></i>
+                Logout
+        </span>
+    </div>
+</div>

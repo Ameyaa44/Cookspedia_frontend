@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 p-0" style="min-height: 100vh;">
+            <app-admin-sidebar />
+        </div>
+        <div class="col-sm-12 col-md-9">
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <h3 class="display-4">
+                    Recipes
+                </h3>
+                <input
+                    type="search"
+                    placeholder="Enter Name to Search"
+                    class="form-control w-50 h-50"
+                    [(ngModel)]="searchKey">
+            </div>
+            <a
+                routerLink="/admin/add-recipe"
+                class="btn btn-primary my-2">
+                + Add New Recipe
+            </a>
+
+            <!-- Table -->
+            @if((recipeList | search:searchKey).length > 0){
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Cuisine</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(recipe of recipeList | search:searchKey; track $index){
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{recipe?.name}}</td>
+                        <td>{{recipe?.cuisine}}</td>
+                        <td>
+                            <img
+                                [src]="recipe?.image"
+                                alt="recipeimg"
+                                height="150px">
+                        </td>
+
+                        <td>
+                            <a
+                                routerLink="/admin/edit-recipe/{{recipe._id}}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <button
+                                class="btn"
+                                (click)="handleDeleteRecipe(recipe?._id)">
+                                <i class="fa-solid fa-trash text-danger"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            }
+            @else {
+            <h3 class="text-danger text-center mt-5">
+                No Recipes Found !!
+            </h3>
+            }
+        </div>
+    </div>
+</div>

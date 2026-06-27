@@ -1,0 +1,145 @@
+/* ABOUT PAGE */
+.about-page{
+    background-color: #FFF8F2;
+    color: #222222;
+    overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero-section{
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.hero-left{
+    position: relative;
+}
+
+/* HERO IMAGE */
+.heroimg{
+    max-height: 520px;
+    /* animation: float 4s ease-in-out infinite; */
+    /* filter: drop-shadow(0 10px 25px rgba(0,0,0,0.12)); */
+}
+
+/* TITLE */
+.title-text{
+    color: #FF6B35;
+    line-height: 1.2;
+}
+
+/* HERO TEXT */
+.hero-text{
+    color: #6B7280;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    max-width: 600px;
+}
+
+/* BUTTON */
+.explore-btn{
+    background-color: #FF6B35;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.explore-btn:hover{
+    background-color: #e85a24;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ABOUT SECTION */
+.about-section{
+    padding: 80px 20px;
+}
+
+/* SECTION TITLE */
+.section-title{
+    color: #2E8B57;
+    font-size: 2.5rem;
+}
+
+/* ABOUT TEXT */
+.about-text{
+    color: #555;
+    line-height: 1.9;
+    font-size: 1.02rem;
+}
+
+/* LIST */
+.about-list{
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.about-list li{
+    margin-bottom: 12px;
+    color: #444;
+    font-weight: 500;
+    position: relative;
+}
+
+.about-list li::marker{
+    color: #FF6B35;
+}
+
+/* CHEF IMAGE */
+.chef-img{
+    max-height: 550px;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.12));
+    transition: 0.4s;
+}
+
+.chef-img:hover{
+    transform: scale(1.03);
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .hero-section{
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .title-text{
+        font-size: 2.5rem;
+    }
+
+    .section-title{
+        font-size: 2rem;
+    }
+
+    .heroimg{
+        max-height: 320px;
+        margin-bottom: 30px;
+    }
+
+    .chef-img{
+        max-height: 350px;
+    }
+
+    .explore-btn{
+        margin: auto;
+    }
+}

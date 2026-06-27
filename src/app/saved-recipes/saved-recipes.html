@@ -1,0 +1,99 @@
+<app-header />
+
+<!-- Saved Recipes Page -->
+
+<div class="saved-page">
+
+    <div class="container py-5">
+
+        <!-- Title -->
+
+        <h1 class="saved-title text-center mb-5">
+            Saved Recipes
+        </h1>
+
+        @if (savedRecipes.length > 0) {
+
+        <!-- Recipe Grid -->
+
+        <div class="row g-4 justify-content-center">
+
+            @for (recipe of savedRecipes; track $index) {
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+                <!-- Card -->
+
+                <div class="saved-card shadow-lg">
+
+                    <!-- Image -->
+
+                    <div class="image-wrapper">
+
+                        <img
+                            [src]="recipe?.recipeImage"
+                            class="recipe-img"
+                            alt="recipe_img"
+                            (click)="gotoDetails(recipe.recipeId)" />
+
+                    </div>
+
+                    <!-- Body -->
+
+                    <div class="card-body-custom">
+
+                        <h5 class="recipe-name">
+                            {{ recipe?.recipeName }}
+                        </h5>
+
+                        <!-- Delete Button -->
+
+                        <div class="text-end mt-3">
+
+                            <button
+                                (click)="handleDelete(recipe?._id)"
+                                class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+
+        }
+
+        @else {
+
+        <!-- Empty State -->
+
+        <div class="empty-state text-center">
+
+            <i class="fa-regular fa-bookmark empty-icon"></i>
+
+            <h2 class="empty-title mt-4">
+                No Recipes Saved Yet!!
+            </h2>
+
+            <p class="empty-text mt-3">
+                Save your favorite recipes and access them anytime.
+            </p>
+
+        </div>
+
+        }
+
+    </div>
+
+</div>
+
+<app-footer />

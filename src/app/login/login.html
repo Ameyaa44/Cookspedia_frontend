@@ -1,0 +1,107 @@
+<div class="signin-page">
+
+    <!-- Overlay -->
+
+    <div class="overlay">
+
+        <!-- Brand -->
+
+        <div class="text-center mb-4">
+
+            <h1 class="brand-title">
+                CooksPedia
+                <i class="fa-solid fa-fire text-warning"></i>
+            </h1>
+
+            <p class="brand-subtitle">
+                Get more than 100+ recipes on your fingertips!!
+            </p>
+
+        </div>
+
+        <!-- Signin Card -->
+
+        <div class="signin-card shadow-lg">
+
+            <h3 class="text-center fw-bold mb-4 section-title">
+                User Sign In
+            </h3>
+
+            <form
+                [formGroup]="logForm"
+                (ngSubmit)="handleSignin()">
+
+                <!-- Email -->
+
+                <div class="mb-3">
+
+                    <input
+                        type="text"
+                        placeholder="Enter Email ID"
+                        formControlName="email"
+                        class="form-control custom-input" />
+
+                    @if(logForm.get('email')?.invalid &&
+                    logForm.get('email')?.touched){
+
+                    <div class="text-danger mt-1 small">
+                        *Invalid Email
+                    </div>
+
+                    }
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="mb-3">
+
+                    <input
+                        type="password"
+                        placeholder="Enter Password"
+                        formControlName="password"
+                        class="form-control custom-input" />
+
+                    @if(logForm.get('password')?.invalid &&
+                    logForm.get('password')?.touched){
+
+                    <div class="text-danger mt-1 small">
+                        *Invalid Password
+                    </div>
+
+                    }
+
+                </div>
+
+                <!-- Button -->
+
+                <div class="d-grid mt-4">
+
+                    <button
+                        class="btn signin-btn py-2"
+                        [disabled]="logForm.invalid">
+
+                        Sign In
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- Home Link -->
+
+            <div class="text-center mt-4">
+
+                <a routerLink="/" class="home-link">
+                    <i class="fa-solid fa-arrow-left me-2"></i>
+                    Go To Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,154 @@
+.contact-page{
+    background-color: #FFF8F2;
+    overflow-x: hidden;
+    color: #222;
+}
+
+.contact-hero{
+    min-height: 60vh;
+    background:
+        linear-gradient(rgba(34,34,34,0.65), rgba(34,34,34,0.65)),
+        url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 20px;
+}
+
+.hero-content{
+    max-width: 800px;
+}
+
+.hero-content h1{
+    color: #FFB703;
+}
+
+.hero-text{
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.9);
+}
+
+.contact-info{
+    background-color: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    height: 100%;
+}
+
+.section-title{
+    color: #2E8B57;
+}
+
+.contact-text{
+    color: #6B7280;
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.contact-detail p{
+    color: #444;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.6;
+}
+
+.icon-box{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #FFF1EA;
+    color: #FF6B35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.social-icon{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #FFF1EA;
+    color: #FF6B35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.social-icon:hover{
+    background-color: #FF6B35;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.feedback-card{
+    width: 100%;
+    max-width: 550px;
+    background-color: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.custom-input{
+    border-radius: 14px;
+    border: 2px solid #FFE3D6;
+    padding: 14px 18px;
+    box-shadow: none;
+    transition: 0.3s;
+    resize: none;
+}
+
+.custom-input:focus{
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 0.15rem rgba(255,107,53,0.15);
+}
+
+.disclaimer{
+    color: #6B7280;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.submit-btn{
+    background-color: #FF6B35;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.submit-btn:hover{
+    background-color: #e85a24;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .contact-hero{
+        min-height: 50vh;
+        text-align: center;
+    }
+
+    .hero-content h1{
+        font-size: 2.5rem;
+    }
+
+    .feedback-card,
+    .contact-info{
+        padding: 25px;
+    }
+
+    .contact-detail p{
+        align-items: flex-start;
+    }
+}

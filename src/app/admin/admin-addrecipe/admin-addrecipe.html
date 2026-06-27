@@ -1,0 +1,133 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 p-0" style="min-height: 100vh;">
+            <app-admin-sidebar />
+        </div>
+
+        <div class="col-sm-12 col-md-9">
+            <div class="container-fluid h-100 d-flex justify-content-center align-items-center p-3">
+
+                <div class="w-75 border border-2 shadow bg-light p-3">
+                    @if(recipeId){
+                    <h3 class="text-center my-3">Edit Recipe</h3>                 
+                    }
+                    @else{
+                    <h3 class="text-center my-3">Add Recipe</h3>
+                    }
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <input type="text" name="name" [(ngModel)]="recipeDetails.name" placeholder="Enter Recipe Name" class="form-control mb-3">
+
+                            <input type="text" name="preparationTime" [(ngModel)]="recipeDetails.prepTimeMinutes" placeholder="Recipe Preparation Time(Minutes)"
+                                class="form-control mb-3">
+
+                            <input type="text" name="image" [(ngModel)]="recipeDetails.image" placeholder="Recipe Image Url" class="form-control mb-3">
+
+                            <input type="text" name="cuisine" [(ngModel)]="recipeDetails.cuisine" placeholder="Cuisine Type(ex:Asian,Indian,etc)"
+                                class="form-control mb-3">
+
+                            <div class="d-flex gap-2">
+                                <input type="text" #ingredientInp placeholder="Ingredients" class="form-control mb-3">
+                                <button class="btn btn-danger mb-3" (click)="addSelectedIngredients(ingredientInp)">
+                                    +
+                                </button>
+                            </div>
+                            @if(selectedIngredients.length>0){
+                                <div class="mt-1" style="max-height: 150px;overflow-y: auto;">
+                                    @for(ing of selectedIngredients;track $index){
+                                        <div class="d-flex justify-content-between align-items-center border border-2 rounded px-2 mb-1">
+                                            <span>{{ing}}</span>
+                                            <button class="btn" (click)="removeSelectedIngredients(ing)">
+                                                <i class="fa-solid fa-trash text-danger"></i>
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            <div>
+
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md-6">
+                            <input type="text" name="servings" [(ngModel)]="recipeDetails.servings" placeholder="Recipe Servings(ex:4)"
+                                class="form-control mb-3">
+
+                            <input type="text" name="cookingTime" [(ngModel)]="recipeDetails.cookTimeMinutes" placeholder="Recipe Cooking Time(Minutes)"
+                                class="form-control mb-3">
+
+                            <input type="text" name="calories" [(ngModel)]="recipeDetails.caloriesPerServing" placeholder="Recipe Calories Per Serving(ex:450 cal)"
+                                class="form-control mb-3">
+
+                            <div class="d-flex gap-2">
+                                <label for="">Select Difficulty :</label>
+                                <select class="form-control mb-3" name="difficulty" [(ngModel)]="recipeDetails.difficulty">
+                                    <option value="" disabled selected>Select Difficulty</option>
+                                    <option value="Hard">Hard</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Easy">Easy</option>
+                                </select>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <input type="text" #instructionsInp placeholder="Instructions" class="form-control">
+                                <button class="btn btn-danger" (click)="addSelectedInstructions(instructionsInp)">
+                                    +
+                                </button>
+                            </div>
+                            @if(selectedInstructions.length>0){
+                                <div class="mt-1" style="max-height: 150px;overflow-y: auto;">
+                                    @for(ins of selectedInstructions;track $index){
+                                        <div class="d-flex justify-content-between align-items-center border border-2 rounded px-2 mb-1">
+                                            <span>{{ins}}</span>
+                                            <button class="btn text-center" (click)="removeSelectedInstructions(ins)">
+                                                <i class="fa-solid fa-trash text-danger"></i>
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+
+                    <!-- Meal Types -->
+                    <div class="border mt-3 p-3">
+                        <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
+                            <h6 class="mb-0">Meal Types</h6>
+                            @if(selectedMealTypes.length>0){
+                            @for(smt of selectedMealTypes;track $index){
+                            <span class="border px-2 py-1 rounded">
+                                {{smt}}
+                            </span>
+                            }
+                            }
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            @for(mt of mealTypes;track $index){
+                                <label [for]="mt" class="border rounded mb-2">
+                                    <input type="checkbox" (change)="chooseMeal($event)" [id]="mt" [name]="mt" name="" class="">
+                                    {{mt}}  
+                                </label>
+                            }
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        @if(recipeId){
+                        <button class="btn btn-success" (click)="handleEditRecipe()">Update</button>
+                        }
+                        @else{
+                        <button class="btn btn-success" (click)="handleAddRecipe()">Submit</button>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

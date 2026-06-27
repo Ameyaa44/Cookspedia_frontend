@@ -1,0 +1,132 @@
+<app-header />
+
+<!-- Recipe Details -->
+<div class="container-fluid recipe-page py-5">
+
+  <div class="container">
+
+    <div class="card recipe-card shadow-lg border-0">
+
+      <div class="row g-0 align-items-center">
+
+        <!-- Image Section -->
+        <div class="col-12 col-md-5 image-section d-flex justify-content-center align-items-center">
+
+          <img
+            [src]="recipeData?.image"
+            alt="recipe-image"
+            class="img-fluid recipe-img" />
+
+        </div>
+
+        <!-- Content Section -->
+        <div class="col-12 col-md-7">
+
+          <div class="card-body p-4 p-md-5">
+
+            <!-- Cuisine -->
+            <div class="mb-3">
+              <span class="cuisine-badge">
+                {{recipeData?.cuisine}}
+              </span>
+            </div>
+
+            <!-- Recipe Name -->
+            <h1 class="recipe-title mb-4">
+              {{recipeData?.name}}
+            </h1>
+
+            <!-- Recipe Details -->
+            <div class="recipe-info">
+
+              <div class="info-box">
+                <h6>Cooking Time</h6>
+                <p>{{recipeData?.cookTimeMinutes}} Minutes</p>
+              </div>
+
+              <div class="info-box">
+                <h6>Difficulty</h6>
+                <p>{{recipeData?.difficulty}}</p>
+              </div>
+
+              <div class="info-box">
+                <h6>Servings</h6>
+                <p>{{recipeData?.servings}}</p>
+              </div>
+
+              <div class="info-box">
+                <h6>Preparation Time</h6>
+                <p>{{recipeData?.prepTimeMinutes}} Minutes</p>
+              </div>
+
+              <div class="info-box">
+                <h6>Calories</h6>
+                <p>{{recipeData?.caloriesPerServing}}</p>
+              </div>
+
+            </div>
+
+            <hr class="custom-line">
+
+            <!-- Ingredients -->
+            <div class="mb-4">
+
+              <h4 class="section-title">
+                Ingredients
+              </h4>
+
+              <p class="recipe-text">
+                {{recipeData?.ingredients}}
+              </p>
+
+            </div>
+
+            <!-- Instructions -->
+            <div class="mb-4">
+
+              <h4 class="section-title">
+                Instructions
+              </h4>
+
+              <p class="recipe-text">
+                {{recipeData?.instructions}}
+              </p>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-wrap gap-3 mt-4">
+
+              <button
+                (click)="handleDownload()"
+                class="btn action-btn download-btn px-4 py-2">
+
+                <i class="fa-solid fa-download me-2"></i>
+                Download
+
+              </button>
+
+              <button
+                (click)="handleRecipeSave()"
+                class="btn action-btn save-btn px-4 py-2">
+
+                <i class="fa-solid fa-bookmark me-2"></i>
+                Save Recipe
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer />

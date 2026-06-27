@@ -1,0 +1,177 @@
+<app-header />
+
+<!-- Contact Page -->
+<div class="container-fluid contact-page p-0">
+
+    <!-- Hero Section -->
+    <div class="contact-hero d-flex justify-content-center align-items-center text-light">
+
+        <div class="hero-content text-center px-3">
+
+            <h1 class="display-3 fw-bold mb-4">
+                Contact Us
+            </h1>
+
+            <p class="hero-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Magni dolores aut earum non est, maiores amet nobis
+                praesentium tenetur et atque, at illum!
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Main Section -->
+    <div class="container-fluid py-5">
+
+        <div class="row g-5 align-items-center">
+
+            <!-- Left Section -->
+            <div class="col-12 col-md-6">
+
+                <div class="contact-info p-4 shadow-lg mx-5">
+
+                    <h2 class="text-center fw-bold section-title mb-4">
+                        Get In Touch
+                    </h2>
+
+                    <p class="contact-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Excepturi iste, accusamus, deserunt perspiciatis harum magni.
+                        Placeat saepe est aliquam eveniet.
+                    </p>
+
+                    <p class="contact-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Deleniti cupiditate aut rem ab iusto non quo libero.
+                    </p>
+
+                    <!-- Contact Details -->
+                    <div class="contact-detail">
+
+                        <p class="fw-bold">
+                            <span class="icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+
+                            Address : ABC Building, India
+                        </p>
+
+                        <p class="fw-bold">
+                            <span class="icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+
+                            Phone : +91 9876543210
+                        </p>
+
+                        <p class="fw-bold">
+                            <span class="icon-box">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+
+                            Email : cookspedia@gmail.com
+                        </p>
+
+                    </div>
+
+                    <!-- Social Icons -->
+
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mt-5">
+
+                        <div class="social-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+
+                        <div class="social-icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+
+                        <div class="social-icon">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </div>
+
+                        <div class="social-icon">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Section -->
+
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+
+                <div class="feedback-card shadow-lg">
+
+                    <h2 class="fw-bold text-center mb-4 section-title">
+                        Add Your Testimony
+                    </h2>
+
+                    <!-- Name -->
+
+                    <div class="mb-3">
+                        <input
+                            type="text"
+                            name="name"
+                            [(ngModel)]="name"
+                            class="form-control custom-input"
+                            placeholder="Name" />
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+                        <input
+                            type="email"
+                            name="email"
+                            [(ngModel)]="email"
+                            class="form-control custom-input"
+                            placeholder="Email" />
+                    </div>
+
+                    <!-- Feedback -->
+
+                    <div class="mb-3">
+                        <textarea
+                            class="form-control custom-input"
+                            [(ngModel)]="feedback"
+                            name="feedback"
+                            rows="5"
+                            placeholder="Enter Testimony"></textarea>
+                    </div>
+
+                    <!-- Disclaimer -->
+
+                    <p class="disclaimer mb-4">
+                        By submitting, you agree to the terms and conditions
+                        of the website. We may use your details on our platform.
+                    </p>
+
+                    <!-- Submit -->
+
+                    <div class="d-flex justify-content-end">
+                        <button
+                            class="btn submit-btn px-4 py-2"
+                            (click)="handleFeedbackSubmit()">
+
+                            Submit
+
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<app-footer />

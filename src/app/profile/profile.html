@@ -1,0 +1,197 @@
+<app-header />
+
+<!-- Profile Page -->
+
+<div class="container-fluid profile-page p-0">
+
+    <!-- Hero Section -->
+
+    <div class="profile-hero">
+
+        <div class="container py-5">
+
+            <div class="row align-items-center g-4">
+
+                <!-- Profile Image -->
+
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+
+                    <div class="profile-image-wrapper">
+
+                        <img
+                            [src]="profile ? profile : 'https://static.vecteezy.com/system/resources/thumbnails/019/879/186/small/user-icon-on-transparent-background-free-png.png'"
+                            alt="profile_pic"
+                            class="profile-image" />
+
+                    </div>
+
+                </div>
+
+                <!-- Profile Details -->
+
+                <div class="col-12 col-md-8 text-light">
+
+                    <h2 class="profile-name">
+                        {{username}}
+                    </h2>
+
+                    <p class="profile-text mt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magnam explicabo a qui aut veniam nam animi exercitationem
+                        accusantium adipisci facilis quo.
+                    </p>
+
+                    <button
+                        class="btn edit-btn mt-3"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample"
+                        aria-controls="offcanvasExample">
+
+                        <i class="fa-solid fa-pen-to-square me-2"></i>
+                        Edit Profile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Download Recipes -->
+
+    <div class="container py-5">
+
+        <h2 class="download-title text-center mb-5">
+            Downloaded Recipes
+        </h2>
+
+        <div class="row g-4 justify-content-center">
+
+            @if (downloadList.length > 0) {
+
+            @for (recipe of downloadList; track $index) {
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+                <div class="recipe-card shadow-lg">
+
+                    <img
+                        [src]="recipe?.recipeImage"
+                        class="recipe-img"
+                        alt="recipe_img" />
+
+                    <div class="recipe-body">
+
+                        <h5 class="recipe-name">
+                            {{recipe?.recipeName}}
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            }
+
+            }
+
+            @else {
+
+            <h3 class="text-danger fw-bold text-center">
+                No Downloaded Recipes Available
+            </h3>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+<app-footer />
+
+<!-- Offcanvas -->
+
+<div
+    class="offcanvas offcanvas-start custom-offcanvas"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+
+    <!-- Header -->
+
+    <div class="offcanvas-header">
+
+        <h5
+            class="offcanvas-title fw-bold"
+            id="offcanvasExampleLabel">
+
+            Profile Update
+
+        </h5>
+
+        <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close">
+
+        </button>
+
+    </div>
+
+    <!-- Body -->
+
+    <div class="offcanvas-body">
+
+        <div class="d-flex flex-column align-items-center">
+
+            <!-- Upload Image -->
+
+            <label
+                for="inp"
+                class="upload-label">
+
+                <input
+                    type="file"
+                    (change)="getFile($event)"
+                    id="inp"
+                    hidden
+                    accept="image/*">
+
+                <img
+                    [src]="profile"
+                    alt="upload"
+                    class="upload-img">
+
+            </label>
+
+            <!-- Username -->
+
+            <input
+                type="text"
+                [(ngModel)]="username"
+                name="username"
+                class="form-control custom-input mt-3"
+                placeholder="Enter Username">
+
+            <!-- Button -->
+
+            <button
+                class="btn update-btn mt-4"
+                (click)="handleProfileUpdate()">
+
+                Update Profile
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
