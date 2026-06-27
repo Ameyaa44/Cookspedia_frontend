@@ -1,7 +1,7 @@
 # Cookspedia
 
 ## Backend Repository : https://github.com/Ameyaa44/Cookspedia_server
-## Live : https://cookspedia-psi.vercel.app
+## Live : https://cookspedia-frontend.vercel.app
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.25.
 
